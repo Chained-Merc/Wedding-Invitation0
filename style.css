@@ -1,0 +1,504 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-cream: #FDFBF7;
+    --text-dark: #2A2421;
+    --primary-rose: #B83B5E; /* Theme Rose / Magenta Accent */
+    --accent-gold: #D4AF37;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Upgraded Monogram Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(42, 36, 33, 0.05);
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-rose);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50% 0 50% 0; /* Elegant structural abstract frame */
+    background: rgba(184, 59, 94, 0.03);
+}
+
+.monogram-letter {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.monogram-amp {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--primary-rose);
+    margin: 0 4px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-rose);
+}
+
+.nav-rsvp-btn {
+    background-color: var(--primary-rose);
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+}
+
+/* --- Layout Layout Structures --- */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.content-narrow {
+    max-width: 700px;
+}
+
+.grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+/* New Three Column Layout for Celebration */
+.grid-three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--primary-rose);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Button Frameworks --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-rose);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #912A47;
+}
+
+.btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--text-dark);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-cream);
+}
+
+/* --- Section 1: Hero Frame --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.hero-image-block {
+    flex: 1;
+    padding: 2rem;
+}
+
+.hero-img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.hero-text-block {
+    flex: 1;
+    padding: 4rem;
+    text-align: center;
+    position: relative;
+    background-color: #FDFBF7; /* Base cream */
+    
+    /* Creates a beautiful, soft arch silhouette in the center */
+    background-image: radial-gradient(ellipse at bottom, #F4EFE6 0%, #F4EFE6 70%, transparent 70%);
+    background-size: 140% 180%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 1.5rem 0;
+}
+
+.ampersand {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--primary-rose);
+}
+
+.hero-date {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-top: 2rem;
+}
+
+.hero-date-detail {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--primary-rose);
+	margin-bottom: 0.2rem;
+}
+
+/* --- Section 2: Story Styles --- */
+.story-section {
+    background-color: #F7F3EC;
+}
+
+.story-text {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.editorial-line {
+    width: 60px;
+    height: 1px;
+    background-color: var(--accent-gold);
+    margin: 0 auto;
+}
+
+/* --- Section 3: Upgraded Frosted Celebration Cards --- */
+.schedule-section {
+    background: linear-gradient(135deg, #FDFBF7 0%, #F5EFE6 100%);
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(42, 36, 33, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(184, 59, 94, 0.08);
+    border: 1px solid rgba(184, 59, 94, 0.15);
+}
+
+.highlight-card {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.event-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+}
+
+.event-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.event-card .time {
+    color: var(--primary-rose);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+}
+
+.event-details {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- Section 4: Venue Structure Upgrades --- */
+.venue-card {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.01);
+}
+
+.venue-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.venue-name {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.venue-address {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* --- Section 5: RSVP Split Framework --- */
+.rsvp-section {
+    background-color: #F7F3EC;
+}
+
+.rsvp-sub {
+    margin-bottom: 1rem;
+}
+
+.rsvp-form-block h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--primary-rose);
+}
+
+.form-wrapper {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 3rem 0;
+    background-color: var(--text-dark);
+    color: var(--bg-cream);
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* --- Responsive Layout (Mobile View) --- */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    nav a {
+        margin-left: 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-image-block, .hero-text-block {
+        flex: none;
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-img {
+        height: 45vh;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .grid-two-col, .grid-three-col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- Countdown Timer Styles --- */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.0rem;
+    margin: 0rem 0 1.5rem 0; /* Changed from '2.5rem 0' to reduce top space */
+    padding: 0.5rem; /* Slightly reduced padding */
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(184, 59, 94, 0.1);
+    padding: 0.8rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.countdown-number {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--primary-rose);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 0.4rem;
+}
+
+/* Ensure font size scales smoothly on smaller mobile screens */
+@media (max-width: 480px) {
+    .countdown-container {
+        gap: 0.8rem;
+    }
+    .countdown-box {
+        min-width: 60px;
+        padding: 0.6rem 0.3rem;
+    }
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Container holding the animation */
+#petal-canvas {
+    position: relative;
+    background: linear-gradient(to bottom, #FDFBF7, #F5EFE6); /* Seamless background tint */
+    overflow: hidden;
+    height: 75vh;
+}
+
+/* Individual petal styles generated by code */
+.falling-petal {
+    position: absolute;
+    top: -20px;
+    pointer-events: none;
+    animation: linear infinite;
+}
+
+/* Core gravity drop animation */
+@keyframes fallAnimation {
+    0% {
+        top: -5%;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        top: 105%;
+        transform: translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
