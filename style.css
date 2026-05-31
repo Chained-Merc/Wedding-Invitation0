@@ -517,3 +517,18 @@ footer {
         opacity: 0;
     }
 }
+
+
+/* --- The Nuclear Mobile Overflow Reset --- */
+html, body, .hero-section, .hero-container {
+    height: auto !important;
+    min-height: 100svh !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.hero-text-block {
+    height: auto !important;
+    padding-bottom: 50px !important; /* Forces the buffer directly inside the text/button block */
+    box-sizing: border-box !important;
+}
