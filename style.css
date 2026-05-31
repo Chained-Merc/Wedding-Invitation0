@@ -161,10 +161,12 @@ h2 {
 
 /* --- Section 1: Hero Frame --- */
 .hero-section {
-    min-height: 100vh;
+    min-height: 100vh;    /* Fallback for older browsers */
+    min-height: 100svh;   /* Fix for iOS: Small Viewport Height */
     display: flex;
     align-items: center;
     padding-top: 80px;
+    box-sizing: border-box; /* Crucial step to include padding in height calculation */
 }
 
 .hero-container {
