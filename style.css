@@ -532,3 +532,33 @@ html, body, .hero-section, .hero-container {
     padding-bottom: 50px !important; /* Forces the buffer directly inside the text/button block */
     box-sizing: border-box !important;
 }
+
+/* --- Mobile Navbar Optimization --- */
+@media (max-width: 600px) {
+    /* 1. Tighten structural containers & menus */
+    header, nav, .header, .navbar, [class*="nav"], [class*="header"] {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+    }
+
+    /* 2. Catch-all for the logo: Targets the FIRST item inside the nav bar */
+    nav > :first-child, header > :first-child {
+        max-width: 80px !important;
+        font-size: 16px !important; /* If it's text-based like "M & S" */
+        height: auto !important;
+    }
+
+    /* 3. Scale down all links/text inside the menu row */
+    nav a, .nav-links a, header a {
+        font-size: 13px !important;
+        margin: 0 3px !important;
+        padding: 4px 6px !important;
+    }
+
+    /* 4. Shrink the header's RSVP button specifically */
+    nav a[href*="rsvp"], nav button, header button {
+        font-size: 12px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap !important; /* Prevents text inside the button from splitting */
+    }
+}
