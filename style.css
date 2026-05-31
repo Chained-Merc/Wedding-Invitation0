@@ -47,17 +47,20 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--primary-rose);
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1.0rem;
     border-radius: 50% 0 50% 0; /* Elegant structural abstract frame */
     background: rgba(184, 59, 94, 0.03);
 }
 
 .monogram-letter {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 1.0rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     color: var(--text-dark);
+	max-width:90px;
+	white-space:nowrap;
+
 }
 
 .monogram-amp {
@@ -168,8 +171,9 @@ h2 {
     justify-content: center; /* Centers everything vertically safely */
     align-items: center;
     padding-top: 90px;      /* Gives breathing room below your sticky menu */
-    padding-bottom: 30px;   /* CRITICAL: Forces a safety gap at the very bottom */
+    padding-bottom: 20px;   /* CRITICAL: Forces a safety gap at the very bottom */
     box-sizing: border-box; /* Ensures the padding doesn't stretch the page container */
+	margin-bottom: 0 !important
 }
 
 .hero-container {
@@ -205,7 +209,7 @@ h2 {
 
 .hero-text-block {
     flex: 1;
-    padding: 4rem;
+    padding: 5rem;
     text-align: center;
     position: relative;
     background-color: #FDFBF7; /* Base cream */
@@ -253,7 +257,9 @@ h2 {
 
 /* --- Section 2: Story Styles --- */
 .story-section {
-    background-color: #F7F3EC;
+    background-color: #FFFFFF;
+    padding-top: 0px !important;
+    margin-top: 0 !important;
 }
 
 .story-text {
@@ -548,6 +554,11 @@ html, body, .hero-section, .hero-container {
 
     /* 2. Scale down the logo frame container */
     nav > :first-child, .brand-logo, [class*="logo"] {
+		font-size: 11px !important;
+		font-weight:600;
+		overflow:hidden;
+		max-width:90px;
+		white-space: nowrap !important;
         max-width: 65px !important; /* Slightly smaller to give the links breathing room */
         height: auto !important;
     }
