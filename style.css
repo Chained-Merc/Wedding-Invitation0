@@ -535,30 +535,49 @@ html, body, .hero-section, .hero-container {
 
 /* --- Mobile Navbar Optimization --- */
 @media (max-width: 600px) {
-    /* 1. Tighten structural containers & menus */
-    header, nav, .header, .navbar, [class*="nav"], [class*="header"] {
+    /* 1. Force the master navigation bar to sit on one row */
+    nav, .navbar, header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         padding: 8px 10px !important;
-        gap: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    /* 2. Catch-all for the logo: Targets the FIRST item inside the nav bar */
-    nav > :first-child, header > :first-child {
-        max-width: 80px !important;
-        font-size: 16px !important; /* If it's text-based like "M & S" */
+    /* 2. Scale down the logo frame container */
+    nav > :first-child, .brand-logo, [class*="logo"] {
+        max-width: 65px !important; /* Slightly smaller to give the links breathing room */
         height: auto !important;
     }
 
-    /* 3. Scale down all links/text inside the menu row */
-    nav a, .nav-links a, header a {
-        font-size: 13px !important;
-        margin: 0 3px !important;
-        padding: 4px 6px !important;
+    /* 3. THE LINK LOCKER: Group all text links into a single-line row container */
+    nav ul, .nav-links, nav div:not(:first-child):not(:last-child) {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important; /* Tight space between menu items */
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 4. Shrink the header's RSVP button specifically */
-    nav a[href*="rsvp"], nav button, header button {
-        font-size: 12px !important;
-        padding: 6px 10px !important;
-        white-space: nowrap !important; /* Prevents text inside the button from splitting */
+    /* 4. UNIFY FONTS: Force ALL text elements inside the menu to look identical */
+    nav a, nav span, .nav-links a, .nav-links span {
+        font-family: inherit !important;
+        font-size: 11px !important; /* Small, elegant typography for mobile screens */
+        font-weight: 500 !important;
+        text-transform: capitalize !important;
+        margin: 0 !important;
+        letter-spacing: 0px !important;
+        white-space: nowrap !important; /* Absolute guarantee they stay on one line */
+    }
+
+    /* 5. Make the RSVP button perfectly proportional to the new row text */
+    nav a[href*="rsvp"], nav button, header button, .rsvp-btn {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+        margin-left: 4px !important;
+        white-space: nowrap !important;
     }
 }
