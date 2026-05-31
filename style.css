@@ -173,11 +173,21 @@ h2 {
 }
 
 .hero-container {
+    /* 1. Shatter any rigid height limits causing the overflow */
+    height: auto !important; 
+    
+    /* 2. Force it to take up the available vertical space safely */
+    min-height: 100%; 
+    
+    /* 3. Keep layout items centered and stacked cleanly */
     display: flex;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    
+    /* 4. The safety shield: force a 40px gap below the RSVP button */
+    padding-bottom: 40px !important; 
+    box-sizing: border-box;
 }
 
 .hero-image-block {
