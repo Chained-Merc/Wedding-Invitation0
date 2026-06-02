@@ -1,6 +1,6 @@
 /* --- Global Reset & Variables --- */
 :root {
-    --bg-cream: #FDFBF7;
+    --bg-cream: #f6f2eb;
     --text-dark: #2A2421;
     --primary-rose: #B83B5E; /* Theme Rose / Magenta Accent */
     --accent-gold: #D4AF37;
@@ -8,6 +8,7 @@
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Inter', sans-serif;
 }
+
 
 * {
     margin: 0;
@@ -257,7 +258,7 @@ h2 {
 
 /* --- Section 2: Story Styles --- */
 .story-section {
-    background-color: #FFFFFF;
+    background-color:var(--bg-cream);
     padding-top: 0px !important;
     margin-top: 0 !important;
 }
@@ -282,14 +283,38 @@ h2 {
     background: linear-gradient(135deg, #FDFBF7 0%, #F5EFE6 100%);
 }
 
+/*
 .event-card {
+
+	position:relative;
+	background:linear-gradient(rgba(246, 242, 235, 0.9), rgba(255, 255, 255, 0.65)), 
+                url("Wedding.jpg") no-repeat center center !important;
+	background-size: 50%;
     background-color: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 3rem 1.5rem;
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(42, 36, 33, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.4s ease;
+}
+*/
+
+.event-card {
+    position: relative;
+    /* Combine layers correctly: gradients first, then images. 
+       The positioning, repeat, and !important apply to the final layer chain. */
+    background: linear-gradient(rgba(246, 242, 235, 0.5), rgba(255, 255, 255, 0.7)), 
+                url("Wedding.jpg") center center / 100% no-repeat !important;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-height: 370px;
+    padding: 3rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(42, 36, 33, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     transition: all 0.4s ease;
 }
 
@@ -300,6 +325,8 @@ h2 {
 }
 
 .highlight-card {
+    background: linear-gradient(rgba(246, 242, 235, 0.5), rgba(255, 255, 255, 0.7)), 
+                url("Reception.jpg") center center / 100% no-repeat !important;
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
@@ -592,3 +619,4 @@ html, body, .hero-section, .hero-container {
         white-space: nowrap !important;
     }
 }
+
