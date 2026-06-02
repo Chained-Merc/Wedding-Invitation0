@@ -9,8 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body> 
+	
+	<audio id="bg-music" src="Held_In_Golden_Light.mp3" autoplay loop prefetch>
+	</audio>
+	
     <header class="navbar">
         <div class="nav-logo">
             <span class="monogram-letter">anamaya</span>
@@ -190,6 +193,31 @@
 
     // Spawn a new petal every 400 milliseconds
     setInterval(createPetal, 400);
+</script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('bg-music');
+        
+        // Lower the volume slightly (e.g., 40%) so it's a pleasant ambient background, not blasting
+        audio.volume = 0.4; 
+
+        // Attempt to play immediately on load
+        audio.play().catch(error => {
+            console.log("Autoplay blocked by browser. Waiting for user interaction...");
+            
+            // If blocked, play the music the absolute moment the user touches or clicks anywhere on the site
+            const playOnInteraction = () => {
+                audio.play();
+                // Remove the listeners immediately so it doesn't keep triggering on every click
+                document.removeEventListener('click', playOnInteraction);
+                document.removeEventListener('touchstart', playOnInteraction);
+            };
+            
+            document.addEventListener('click', playOnInteraction);
+            document.addEventListener('touchstart', playOnInteraction); // For mobile phones
+        });
+    });
 </script>
 
 </body>
