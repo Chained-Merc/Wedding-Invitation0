@@ -359,8 +359,8 @@ h2 {
 
 /* Ensure deep, high-contrast colors for crisp readability over the cream-to-pink gradient */
 .event-card h3 {
-    color: #2c2523 !important; /* Deep espresso brown (much softer than pure black, looks premium) */
-	font-weight:650;
+    color: #1a110f !important; /* Velvet Dark Chocolate (much softer than pure black, looks premium) */
+	font-weight:650 !important;
 }
 
 .event-card p {
@@ -372,12 +372,12 @@ h2 {
 
 /* This deeper rose hue will tie in beautifully with the pink gradient at the bottom */
 .event-card .time {
-    color: #b54f65 !important; /* Rich, elegant berry-rose */
-    font-weight: 600;
+    color: #FFC905 !important; /* Rich, elegant berry-rose */
+    font-weight: 650 !important;
         /* A precise, soft dark drop shadow that instantly separates the gold text 
        from both the light upper gradient and the dark lower clothing textures */
-    text-shadow: 0.5px 2px 1.5px rgba(0, 0, 0, 0.5), 
-                 -1px -1px 2px rgba(0, 0, 0, 0.2) !important;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8), 
+                 -2px -2px -1px rgba(0, 0, 0, 0.5) !important;
                  
 }
 
@@ -437,7 +437,9 @@ h2 {
 /* The title sits on the upper cream layer: keep it dark espresso */
 
 .highlight-card h3 {
-    color: #2c2523 !important; 
+    color: #fdfaf6 !important;
+    font-weight:600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important; 
 }
 
 /* The date sits in the middle transition: use a vibrant, bright gold 
@@ -483,12 +485,13 @@ h2 {
 
 
 .event-card .time {
+/*
     color: var(--primary-rose);
+*/
     font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 1px;
     margin-bottom: 1.2rem;
-
 
 }
 
