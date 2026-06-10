@@ -372,8 +372,8 @@ h2 {
 
 /* This deeper rose hue will tie in beautifully with the pink gradient at the bottom */
 .event-card .time {
-    color: #FFC905 !important; /* Rich, elegant berry-rose */
-    font-weight: 650 !important;
+    color: #7B3F00 !important; /* Rich, elegant berry-rose */
+    font-weight: 600 !important;
         /* A precise, soft dark drop shadow that instantly separates the gold text 
        from both the light upper gradient and the dark lower clothing textures */
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8), 
