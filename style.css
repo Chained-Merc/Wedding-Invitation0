@@ -51,7 +51,27 @@ body {
     padding: 0.5rem 1.0rem;
     border-radius: 50% 0 50% 0; /* Elegant structural abstract frame */
     background: rgba(184, 59, 94, 0.03);
+    text-decoration:none;
+    color:inherit;
+	
 }
+
+.logo-link {
+	text-decoration:none;
+	color:inherit;
+	
+}
+
+/*--.logo-link span {
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Breathing room between letters screams premium
+} */
 
 .monogram-letter {
     font-family: var(--font-serif);
